@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://mwfbxfwv3xxv"]
+
+[ext_resource type="Script" uid="uid://cj3ybgc6qn20s" path="res://deathzone.gd" id="1_nb3mx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_nb3mx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06h6m"]
+size = Vector2(0.99975026, 0.9997499)
+
+[node name="deathzone" type="Sprite2D" unique_id=1664738952 groups=["Player"]]
+position = Vector2(0, -13.000015)
+scale = Vector2(100.025, 864)
+texture = SubResource("PlaceholderTexture2D_nb3mx")
+script = ExtResource("1_nb3mx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=141517135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=797483423]
+position = Vector2(-8.342564e-09, 1.6685127e-07)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_06h6m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

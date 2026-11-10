@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://765denlde45f"]
+
+[ext_resource type="Script" uid="uid://dx3w2l41omqud" path="res://player.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://bflhgvq3qgulx" path="res://state_machine.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://b0afra5lw8f3d" path="res://state.gd" id="3_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=651969301]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1095555751]
+script = ExtResource("1_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1325443358]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=453801640]
+
+[node name="state_machine" type="Node" parent="Player" unique_id=1534105135]
+script = ExtResource("2_0e48y")
+
+[node name="State" type="Node" parent="Player/state_machine" unique_id=1099223650]
+script = ExtResource("3_epypp")
+
+[node name="idle" type="Node" parent="Player/state_machine" unique_id=759699970]
+
+[node name="walk" type="Node" parent="Player/state_machine" unique_id=1456005240]
+
+[node name="jump" type="Node" parent="Player/state_machine" unique_id=793909167]
+
+[node name="fall" type="Node" parent="Player/state_machine" unique_id=552171621]

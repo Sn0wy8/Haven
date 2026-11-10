@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bhst5ipl4sdiy"]
+
+[ext_resource type="Script" uid="uid://dhr5agod1a0wg" path="res://enemy_state_machine.gd" id="1_4gyqm"]
+[ext_resource type="Script" uid="uid://baft5hovxabxx" path="res://enemy.gd" id="1_qi2p4"]
+[ext_resource type="Script" uid="uid://b7i4n4c5re8i2" path="res://state.gd" id="2_qi2p4"]
+[ext_resource type="Script" uid="uid://c65jbf68buufm" path="res://wander.gd" id="4_3yqyl"]
+[ext_resource type="Script" uid="uid://d3wg87tnvpu8c" path="res://chase.gd" id="5_wujgv"]
+[ext_resource type="Script" uid="uid://iosonianeyux" path="res://attack.gd" id="6_hb8ge"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7xaro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
+size = Vector2(57, 58)
+
+[node name="enemy" type="CharacterBody2D" unique_id=1423116164]
+visible = false
+script = ExtResource("1_qi2p4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=851157131]
+position = Vector2(28.25, 28.25)
+scale = Vector2(57.5, 57.5)
+texture = SubResource("PlaceholderTexture2D_7xaro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=18979524]
+position = Vector2(28.5, 28)
+shape = SubResource("RectangleShape2D_7k104")
+
+[node name="enemy_state_machine" type="Node" parent="." unique_id=665831013]
+script = ExtResource("1_4gyqm")
+
+[node name="State" type="Node" parent="enemy_state_machine" unique_id=970103309]
+script = ExtResource("2_qi2p4")
+
+[node name="wander" type="Node" parent="enemy_state_machine" unique_id=2142253326]
+script = ExtResource("4_3yqyl")
+
+[node name="chase" type="Node" parent="enemy_state_machine" unique_id=789025781]
+script = ExtResource("5_wujgv")
+
+[node name="attack" type="Node" parent="enemy_state_machine" unique_id=1345240297]
+script = ExtResource("6_hb8ge")

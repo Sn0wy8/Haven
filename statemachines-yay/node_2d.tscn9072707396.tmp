@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://765denlde45f"]
+
+[ext_resource type="Script" uid="uid://dx3w2l41omqud" path="res://player.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://bflhgvq3qgulx" path="res://state_machine.gd" id="2_0e48y"]
+[ext_resource type="Script" uid="uid://yi2g1lshtuco" path="res://camera_2d.gd" id="2_4d7sh"]
+[ext_resource type="Script" uid="uid://b0afra5lw8f3d" path="res://state.gd" id="3_epypp"]
+[ext_resource type="Script" uid="uid://deeh0ff7kkwjc" path="res://idle.gd" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://8kkmm22i654k" path="res://jump.gd" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://c4fbjyp2y5a6t" path="res://walk.gd" id="5_rj586"]
+[ext_resource type="Script" uid="uid://c74t5re7d2qxr" path="res://fall.gd" id="7_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://b7mlngsa7e0tj" path="res://icon.svg" id="8_ir8iy"]
+[ext_resource type="Script" uid="uid://b7lprcxvwewys" path="res://dash.gd" id="9_ir8iy"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q6r6c"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
+size = Vector2(129, 129.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
+size = Vector2(889.5, 122)
+
+[node name="Node2D" type="Node2D" unique_id=651969301]
+position = Vector2(-16, -12)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1095555751]
+position = Vector2(117, 24)
+script = ExtResource("1_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1325443358]
+position = Vector2(210, 186)
+scale = Vector2(63.999996, 64.5)
+texture = SubResource("PlaceholderTexture2D_q6r6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=453801640]
+position = Vector2(210.5, 186.375)
+shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1637425677]
+position = Vector2(210, 185)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+script = ExtResource("2_4d7sh")
+
+[node name="state_machine" type="Node" parent="Player" unique_id=1534105135 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("2_0e48y")
+starting_state = NodePath("idle")
+
+[node name="State" type="Node" parent="Player/state_machine" unique_id=1099223650]
+script = ExtResource("3_epypp")
+
+[node name="idle" type="Node" parent="Player/state_machine" unique_id=759699970 node_paths=PackedStringArray("fall_state", "jump_state", "move_state")]
+script = ExtResource("4_0hol4")
+fall_state = NodePath("../fall")
+jump_state = NodePath("../jump")
+move_state = NodePath("../walk")
+
+[node name="walk" type="Node" parent="Player/state_machine" unique_id=1456005240 node_paths=PackedStringArray("fall_state", "jump_state", "idle_state")]
+script = ExtResource("5_rj586")
+fall_state = NodePath("../fall")
+jump_state = NodePath("../jump")
+idle_state = NodePath("../idle")
+
+[node name="jump" type="Node" parent="Player/state_machine" unique_id=793909167 node_paths=PackedStringArray("fall_state", "idle_state", "move_state")]
+script = ExtResource("5_q6r6c")
+fall_state = NodePath("../fall")
+idle_state = NodePath("../idle")
+move_state = NodePath("../walk")
+
+[node name="fall" type="Node" parent="Player/state_machine" unique_id=552171621 node_paths=PackedStringArray("jump_state", "idle_state", "move_state")]
+script = ExtResource("7_4d7sh")
+jump_state = NodePath("../jump")
+idle_state = NodePath("../idle")
+move_state = NodePath("../walk")
+
+[node name="dash" type="Node" parent="Player/state_machine" unique_id=492849830]
+script = ExtResource("9_ir8iy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2130184582]
+position = Vector2(673, 507)
+disable_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1635559367]
+position = Vector2(-36.00006, 872.99994)
+scale = Vector2(17.626953, 14.142579)
+texture = ExtResource("8_ir8iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1818745772]
+position = Vector2(-280, 29)
+shape = SubResource("RectangleShape2D_rj586")
