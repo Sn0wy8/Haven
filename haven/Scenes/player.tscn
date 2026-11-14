@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://Scenes/gun.tscn" id="3_fkybt"]
+[ext_resource type="Script" uid="uid://b13hwkbn70rvx" path="res://MyHurtBox.gd" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(125, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(126, 126)
 
 [node name="player" type="CharacterBody2D" unique_id=1039232777]
 script = ExtResource("1_6t5aa")
@@ -23,3 +27,10 @@ zoom = Vector2(0.5, 0.5)
 [node name="GunPivot" type="Marker2D" parent="." unique_id=452083442]
 
 [node name="Gun" parent="GunPivot" unique_id=1880026885 instance=ExtResource("3_fkybt")]
+
+[node name="MyHurtBox" type="Area2D" parent="." unique_id=418773357]
+script = ExtResource("4_vgqql")
+metadata/_custom_type_script = "uid://b13hwkbn70rvx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox" unique_id=650390589]
+shape = SubResource("RectangleShape2D_fkybt")
