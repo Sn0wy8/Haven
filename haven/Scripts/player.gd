@@ -3,7 +3,7 @@ extends CharacterBody2D
 var health = 3
 var hearts_list : Array [TextureRect]
 @onready
-var animations = $animations
+var animations = $AnimationPlayer
 @onready
 var gun = $GunPivot/Gun
 @onready
@@ -13,9 +13,9 @@ var gun_hold_distance: float
 
 const MAX_SPEED = 1000
 const MAX_Y_SPEED = 900
-const SPEED = 900
+const SPEED = 700
 const CONST_FORWARD = 10
-const VERT_VELOCITY = -3000
+const VERT_VELOCITY = -2500
 const FORWARD_DIR = Vector2.RIGHT
 const GRAVITY = 900
 

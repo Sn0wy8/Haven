@@ -4,8 +4,9 @@ const bullet_scene = preload("res://Scenes/bullet.tscn")
 
 const IS_PLAYER = true
 
+@export var bullet_speed: float = 600.0
 @onready var RotationOffset: Node2D = $RotationOffset
-@onready var SpriteShadow: Sprite2D = $RotationOffset/Sprite2D/shadow
+@onready var SpriteShadow: Sprite2D = $RotationOffset/Sprite2D
 @onready var ShootPos: Marker2D = $RotationOffset/Sprite2D/shoot_pos
 
 var time_between_shot: float = 0.25
@@ -24,6 +25,8 @@ func _shoot():
 	var new_bullet = bullet_scene.instantiate()
 	new_bullet.global_position = ShootPos.global_position
 	new_bullet.global_rotation = ShootPos.global_rotation
+	var direction = Vector2.RIGHT.rotated(ShootPos.global_rotation)
+	new_bullet.velocity = direction * bullet_speed
 	get_tree().current_scene.add_child(new_bullet)
 
 func _on_shoot_timer_timeout() -> void:
