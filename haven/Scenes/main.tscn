@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://b4locmxaumksb" path="res://Scenes/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ceu31quos2umr" path="res://Scenes/platform.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b5ki2hegdeobu" path="res://Scenes/breakable_platform.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://su2tlgsxnnsm" path="res://Scenes/damage_test.tscn" id="4_jjvhh"]
 
 [node name="main" type="Node2D" unique_id=11614573]
 
@@ -23,6 +22,3 @@ rotation = 1.5707964
 
 [node name="breakable_platform" parent="." unique_id=688448539 instance=ExtResource("3_h2yge")]
 position = Vector2(425, -80)
-
-[node name="damage test" parent="." unique_id=669301743 instance=ExtResource("4_jjvhh")]
-position = Vector2(177, 279)
