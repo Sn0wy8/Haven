@@ -9,17 +9,14 @@ var gun_pivot: Marker2D = $GunPivot
 @export
 var gun_hold_distance: float
 
-const MAX_SPEED = 3000
+const MAX_SPEED = 1000
 const MAX_Y_SPEED = 900
-const SPEED = 300.0
+const SPEED = 3000
 const CONST_FORWARD = 10
-const VERT_VELOCITY = -30
+const VERT_VELOCITY = -3000
 const FORWARD_DIR = Vector2.RIGHT
 const GRAVITY = 900
-const DRAG = 300
-
-func Drag_Function() -> void:
-		velocity.y = lerp(velocity.x, float(0), 0.01)
+const DRAG = 200
 
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
@@ -27,19 +24,24 @@ func _physics_process(delta: float) -> void:
 	print(velocity.y)
 	if not is_on_floor() and velocity.y <= MAX_Y_SPEED:
 			velocity.y += GRAVITY * delta 
+			velocity.y -= velocity.y * delta
 
 	if Input.is_action_pressed("UP"):
-		velocity.y += VERT_VELOCITY
+		velocity.y += VERT_VELOCITY * delta
 		velocity.y -= GRAVITY * delta
-
+	else:
+		velocity.y = move_toward(velocity.y, 0, DRAG * delta)
+		
 	if Input.is_action_pressed("DOWN"):
-		velocity.y -= VERT_VELOCITY
+		velocity.y -= VERT_VELOCITY * delta
 		velocity.y -= GRAVITY * delta 
+	else:
+		velocity.y = move_toward(velocity.y, 0, DRAG * delta)
 		
 		
 	var direction := Input.get_axis("LEFT", "RIGHT")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
