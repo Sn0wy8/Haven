@@ -1,10 +1,12 @@
 extends CharacterBody2D
 @onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
 @onready var GraceTimer: Timer = $GraceTimer
+@export var collision_shape = $Colliding/BreakCollide/BreakShape
 
 const IS_PLAYER = true
 var speed: float = 1200
 @onready var direction = Vector2(1,0).rotated(rotation)
+
 
 func _ready() -> void:
 	get_node("MyHitBox/CollisionShape2D").disabled = true
