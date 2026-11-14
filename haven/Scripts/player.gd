@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name main_player
 
 var health = 3
 var player_safe = false
@@ -15,11 +16,13 @@ var gun_hold_distance: float
 
 const MAX_SPEED = 1000
 const MAX_Y_SPEED = 900
-const SPEED = 700
+const SPEED = 600
 const CONST_FORWARD = 10
 const VERT_VELOCITY = -2500
 const FORWARD_DIR = Vector2.RIGHT
-const GRAVITY = 900
+const GRAVITY = 1000
+
+@export var player_velocity = Vector2(velocity.x,velocity.y)
 
 func _ready() -> void:
 	var hearts_parents = $health_bar/HBoxContainer
@@ -31,10 +34,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
 	move_and_slide()
-	#print(velocity.y)
+	print(player_velocity)
 	if not is_on_floor() and velocity.y <= MAX_Y_SPEED:
 			velocity.y += GRAVITY * delta 
-			velocity.y -= velocity.y * delta
+
 
 	if Input.is_action_pressed("UP"):
 		velocity.y += VERT_VELOCITY * delta
