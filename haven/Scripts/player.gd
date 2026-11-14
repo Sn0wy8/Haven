@@ -11,12 +11,11 @@ var gun_hold_distance: float
 
 const MAX_SPEED = 1000
 const MAX_Y_SPEED = 900
-const SPEED = 3000
+const SPEED = 900
 const CONST_FORWARD = 10
 const VERT_VELOCITY = -3000
 const FORWARD_DIR = Vector2.RIGHT
 const GRAVITY = 900
-const DRAG = 200
 
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
@@ -29,14 +28,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("UP"):
 		velocity.y += VERT_VELOCITY * delta
 		velocity.y -= GRAVITY * delta
-	else:
-		velocity.y = move_toward(velocity.y, 0, DRAG * delta)
 		
 	if Input.is_action_pressed("DOWN"):
 		velocity.y -= VERT_VELOCITY * delta
 		velocity.y -= GRAVITY * delta 
-	else:
-		velocity.y = move_toward(velocity.y, 0, DRAG * delta)
 		
 		
 	var direction := Input.get_axis("LEFT", "RIGHT")
