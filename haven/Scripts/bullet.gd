@@ -1,9 +1,19 @@
 extends CharacterBody2D
 @onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
+@onready var GraceTimer: Timer = $GraceTimer
 
 const IS_PLAYER = true
 var speed: float = 1200
 @onready var direction = Vector2(1,0).rotated(rotation)
+
+func _ready() -> void:
+	get_node("MyHitBox/CollisionShape2D").disabled = true
+	GraceTimer.start
+	print("rizz")
+
+func _on_grace_timer_timeout() -> void:
+	get_node("MyHitBox/CollisionShape2D").disabled = false
+	print("rizz")
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(direction*speed*delta)

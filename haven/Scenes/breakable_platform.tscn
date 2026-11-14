@@ -23,6 +23,6 @@ texture = ExtResource("1_3lhpt")
 [node name="hurtbox" type="Area2D" parent="." unique_id=137840561]
 script = ExtResource("2_t78gq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=306751916]
+[node name="COLLIDE" type="CollisionShape2D" parent="hurtbox" unique_id=306751916]
 position = Vector2(170, -0.5)
 shape = SubResource("RectangleShape2D_t78gq")
