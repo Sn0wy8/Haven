@@ -14,11 +14,11 @@ var can_shoot: bool = true
 func _ready() -> void:
 	$ShootTimer.wait_time = time_between_shot
 	
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("shoot") and can_shoot:
-		_shoot()
-		can_shoot = false
-		$ShootTimer.start()
+#func _physics_process(delta: float) -> void:
+	#if Input.is_action_just_pressed("shoot") and can_shoot:
+	#	_shoot()
+	#	can_shoot = false
+	#	$ShootTimer.start()
 		
 func _shoot():
 	var new_bullet = bullet_scene.instantiate()

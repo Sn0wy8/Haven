@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c1rp8layfrf3d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_naebt"]
+load_path = "res://.godot/imported/LIGHT TEXTURE.jpg-f1044c9bb1ba4992bfead18ab7a5bb07.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7vw07"]
+load_path = "res://.godot/imported/SLIME TEXT.png-827764d77b9e33a803ed0e3dd9bb2779.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cd2k1"]
+load_path = "res://.godot/imported/slime thingy normal map.png-546f79fa47c505f24269402e78a736d2.ctex"
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yol0v"]
+diffuse_texture = SubResource("CompressedTexture2D_7vw07")
+normal_texture = SubResource("CompressedTexture2D_cd2k1")
+
+[node name="Node2D" type="Node2D" unique_id=2122860764]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1627853547]
+position = Vector2(-28, -25.000002)
+scale = Vector2(1.001953, 0.99999994)
+texture = SubResource("CompressedTexture2D_naebt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1899636487]
+texture = SubResource("CanvasTexture_yol0v")

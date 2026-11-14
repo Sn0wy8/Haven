@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b4locmxaumksb"]
+
+<<<<<<< HEAD:haven/player.tscn
+[ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://gun.tscn" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://b13hwkbn70rvx" path="res://MyHurtBox.gd" id="4_hqtel"]
+=======
+[ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://Scripts/player.gd" id="1_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_vgqql"]
+[ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://gun.tscn" id="3_fkybt"]
+>>>>>>> main:haven/Scenes/player.tscn
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(125, 127)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sweqy"]
+radius = 60.40695
+
+[node name="player" type="CharacterBody2D" unique_id=1039232777]
+script = ExtResource("1_6t5aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=287004726]
+texture = ExtResource("2_vgqql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=991910359]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=809465771]
+zoom = Vector2(0.5, 0.5)
+
+[node name="GunPivot" type="Marker2D" parent="." unique_id=452083442]
+
+<<<<<<< HEAD:haven/player.tscn
+[node name="Gun" parent="GunPivot" unique_id=1880026885 instance=ExtResource("3_i3pqv")]
+
+[node name="MyHurtBox" type="Area2D" parent="." unique_id=255031405]
+script = ExtResource("4_hqtel")
+metadata/_custom_type_script = "uid://b13hwkbn70rvx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox" unique_id=1876583527]
+shape = SubResource("CircleShape2D_sweqy")
+
+[node name="health_bar" type="CanvasLayer" parent="." unique_id=636274838]
+follow_viewport_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar" unique_id=1091381279]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=301551762]
+custom_minimum_size = Vector2(100.005, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart" unique_id=1412030868]
+texture = ExtResource("2_onrkg")
+
+[node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=5169624]
+custom_minimum_size = Vector2(100.005, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart2" unique_id=1187168442]
+texture = ExtResource("2_onrkg")
+
+[node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=2063688795]
+custom_minimum_size = Vector2(100.005, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart3" unique_id=645705561]
+texture = ExtResource("2_onrkg")
+=======
+[node name="Gun" parent="GunPivot" unique_id=1880026885 instance=ExtResource("3_fkybt")]
+>>>>>>> main:haven/Scenes/player.tscn
