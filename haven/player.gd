@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var health = 3
+var hearts_list : Array [TextureRect]
 @onready
 var animations = $animations
 @onready
@@ -15,6 +16,11 @@ const RIGHT_SPEED = 10
 const JUMP_VELOCITY = -15.0
 const FORWARD_DIR = Vector2.RIGHT
 
+func _ready() -> void:
+	var hearts_parents = $CanvasLayer/HBoxContainer
+	for child in hearts_parents.get_children():
+		hearts_list.append(child)
+	print(hearts_list)
 
 func _physics_process(delta: float) -> void:
 	velocity.x = RIGHT_SPEED
@@ -49,4 +55,5 @@ func _process(delta: float) -> void:
 	
 func take_damage(delta: float) -> void:
 	health -= 1
-	if health 
+	if health == 0:
+		print("DEAD")

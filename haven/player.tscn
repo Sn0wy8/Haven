@@ -13,7 +13,6 @@ radius = 60.40695
 
 [node name="player" type="CharacterBody2D" unique_id=1039232777]
 script = ExtResource("1_4flbx")
-gun_hold_distance = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=287004726]
 texture = ExtResource("2_onrkg")
@@ -34,3 +33,31 @@ metadata/_custom_type_script = "uid://b13hwkbn70rvx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox" unique_id=1876583527]
 shape = SubResource("CircleShape2D_sweqy")
+
+[node name="health_bar" type="CanvasLayer" parent="." unique_id=636274838]
+follow_viewport_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar" unique_id=1091381279]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=301551762]
+custom_minimum_size = Vector2(100.005, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart" unique_id=1412030868]
+texture = ExtResource("2_onrkg")
+
+[node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=5169624]
+custom_minimum_size = Vector2(100.005, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart2" unique_id=1187168442]
+texture = ExtResource("2_onrkg")
+
+[node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=2063688795]
+custom_minimum_size = Vector2(100.005, 0)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="health_bar/HBoxContainer/heart3" unique_id=645705561]
+texture = ExtResource("2_onrkg")
