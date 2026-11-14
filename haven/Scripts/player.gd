@@ -20,9 +20,9 @@ const FORWARD_DIR = Vector2.RIGHT
 const GRAVITY = 900
 
 func _ready() -> void:
-	var hearts_parents = $CanvasLayer/HBoxContainer
-#	for child in hearts_parents.get_children():
-#		hearts_list.append(child)
+	var hearts_parents = $health_bar/HBoxContainer
+	for child in hearts_parents.get_children():
+		hearts_list.append(child)
 	print(hearts_list)
 
 func _physics_process(delta: float) -> void:
@@ -58,6 +58,13 @@ func _process(delta: float) -> void:
 	gun.look_at(get_global_mouse_position())
 
 func take_damage(delta: float) -> void:
-	health -= 1
-	if health == 0:
+	if health > 0:
+		health -= 1
+		update_heart_display()
+		
+	if  health == 0:
 		print("DEAD")
+		
+func update_heart_display():
+	for i in range(hearts_list.size()):
+		hearts_list[i].visible = i < health

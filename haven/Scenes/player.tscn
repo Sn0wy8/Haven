@@ -34,3 +34,36 @@ metadata/_custom_type_script = "uid://b13hwkbn70rvx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox" unique_id=650390589]
 shape = SubResource("RectangleShape2D_fkybt")
+
+[node name="health_bar" type="CanvasLayer" parent="." unique_id=1029350546]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="health_bar" unique_id=1546773776]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=1023195131]
+custom_minimum_size = Vector2(150.305, 0)
+layout_mode = 2
+
+[node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart" unique_id=105763785]
+position = Vector2(48, 44)
+scale = Vector2(0.7265625, 0.6875)
+texture = ExtResource("2_vgqql")
+
+[node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=924898117]
+custom_minimum_size = Vector2(150.305, 0)
+layout_mode = 2
+
+[node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart2" unique_id=1493094175]
+position = Vector2(48, 44)
+scale = Vector2(0.7265625, 0.6875)
+texture = ExtResource("2_vgqql")
+
+[node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=963846076]
+custom_minimum_size = Vector2(150.305, 0)
+layout_mode = 2
+
+[node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart3" unique_id=1873137758]
+position = Vector2(48, 44)
+scale = Vector2(0.7265625, 0.6875)
+texture = ExtResource("2_vgqql")
