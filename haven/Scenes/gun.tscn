@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8815eok78ono"]
 
-[ext_resource type="Script" uid="uid://bpb0y4a1tqd3g" path="res://gun.gd" id="1_vk1bi"]
+[ext_resource type="Script" uid="uid://bpb0y4a1tqd3g" path="res://Scripts/gun.gd" id="1_vk1bi"]
 [ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_dk5gl"]
 
 [node name="Gun" type="Node2D" unique_id=1880026885]

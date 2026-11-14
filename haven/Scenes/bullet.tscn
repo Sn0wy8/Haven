@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmyg27jdy6160"]
+
+[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="1_v8qja"]
+[ext_resource type="Script" uid="uid://0vj47ksbt8le" path="res://Scripts/bullet.gd" id="2_t4vbm"]
+
+[node name="Bullet" type="Sprite2D" unique_id=2051783511]
+position = Vector2(-1.9073486e-06, -3.8146973e-06)
+scale = Vector2(0.19531251, 0.05468749)
+texture = ExtResource("1_v8qja")
+script = ExtResource("2_t4vbm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=295394808]
+
+[node name="DistanceTimer" type="Timer" parent="." unique_id=1743016977]
+
+[connection signal="timeout" from="DistanceTimer" to="." method="_on_distance_timer_timeout"]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var health = 3
+var hearts_list : Array [TextureRect]
 @onready
 var animations = $animations
 @onready
@@ -16,6 +18,12 @@ const CONST_FORWARD = 10
 const VERT_VELOCITY = -3000
 const FORWARD_DIR = Vector2.RIGHT
 const GRAVITY = 900
+
+func _ready() -> void:
+	var hearts_parents = $CanvasLayer/HBoxContainer
+#	for child in hearts_parents.get_children():
+#		hearts_list.append(child)
+	print(hearts_list)
 
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
@@ -48,3 +56,8 @@ func _process(delta: float) -> void:
 	gun.scale.y = 1 if mouse_direction.x > 0 else -1
 	gun.show_behind_parent = mouse_direction.y < 0
 	gun.look_at(get_global_mouse_position())
+
+func take_damage(delta: float) -> void:
+	health -= 1
+	if health == 0:
+		print("DEAD")

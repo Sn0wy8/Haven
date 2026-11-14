@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_vgqql"]
-[ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://gun.tscn" id="3_fkybt"]
+[ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://Scenes/gun.tscn" id="3_fkybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(125, 127)
