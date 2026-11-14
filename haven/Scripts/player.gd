@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name main_player
 
-var health = 3
+var health = 5
 var player_safe = false
 var time_safe : float = 0.5 
 var hearts_list : Array [TextureRect]
@@ -72,9 +72,9 @@ func take_damage(delta: float) -> void:
 			player_safe = true
 			update_heart_display()
 			$health_timer.start()
-		
-		if  health == 0:
-			print("DEAD")
+			if  health == 0:
+				print("DEAD")
+
 		
 func update_heart_display():
 	for i in range(hearts_list.size()):
