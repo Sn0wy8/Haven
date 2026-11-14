@@ -7,10 +7,8 @@
 load_path = "res://.godot/imported/LIGHT TEXTURE.jpg-f1044c9bb1ba4992bfead18ab7a5bb07.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7vw07"]
-load_path = "res://.godot/imported/SLIME TEXT.png-827764d77b9e33a803ed0e3dd9bb2779.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cd2k1"]
-load_path = "res://.godot/imported/slime thingy normal map.png-546f79fa47c505f24269402e78a736d2.ctex"
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yol0v"]
 diffuse_texture = SubResource("CompressedTexture2D_7vw07")
@@ -26,8 +24,8 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vec
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_57qmd"]
-offsets = PackedFloat32Array(0.073529415, 0.25, 0.46568626, 0.74509805, 1)
-colors = PackedColorArray(0.5924482, 0, 0, 1, 0.9730572, 0.4504032, 1.347661e-06, 1, 0.954711, 0.954711, 0, 1, 0.12773594, 0.12773594, 0.12773594, 1, 0.12773594, 0.12773594, 0.12773594, 1)
+offsets = PackedFloat32Array(0, 0.17156863, 0.3480392, 0.50980395, 0.64705884, 1)
+colors = PackedColorArray(0.5924482, 0, 0, 1, 0.9730572, 0.4504032, 1.347661e-06, 1, 0.954711, 0.954711, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_d0u6y"]
 frames = 5
@@ -52,6 +50,7 @@ texture = SubResource("CanvasTexture_yol0v")
 position = Vector2(-577, 50)
 amount = 150
 texture = ExtResource("1_30rdv")
+lifetime = 1.3
 emission_shape = 1
 emission_sphere_radius = 0.01
 direction = Vector2(-1, 1)
