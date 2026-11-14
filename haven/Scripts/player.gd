@@ -28,11 +28,11 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and velocity.y <= MAX_Y_SPEED:
 			velocity.y += GRAVITY * delta 
 
-	if Input.is_action_pressed("UP") and velocity.y <= MAX_Y_SPEED:
+	if Input.is_action_pressed("UP"):
 		velocity.y += VERT_VELOCITY
 		velocity.y -= GRAVITY * delta
 
-	if Input.is_action_pressed("DOWN") and velocity.y >= MAX_Y_SPEED:
+	if Input.is_action_pressed("DOWN"):
 		velocity.y -= VERT_VELOCITY
 		velocity.y -= GRAVITY * delta 
 		
