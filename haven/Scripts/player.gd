@@ -5,19 +5,16 @@ var health = 3
 var player_safe = false
 var time_safe : float = 0.5 
 var hearts_list : Array [TextureRect]
-@onready
-var animations = $AnimationPlayer
-@onready
-var gun = $GunPivot/Gun
-@onready
-var gun_pivot: Marker2D = $GunPivot
-@export
-var gun_hold_distance: float
+@onready var animation: AnimatedSprite2D = $AnimatedSprite2D
+@onready var gun = $GunPivot/Gun
+@onready var gun_pivot: Marker2D = $GunPivot
+@export var gun_hold_distance: float
+@onready var particle: CPUParticles2D = $CPUParticles2D
 
 const MAX_SPEED = 1000
 const MAX_Y_SPEED = 900
 const SPEED = 600
-const CONST_FORWARD = 10
+const CONST_FORWARD = 400
 const VERT_VELOCITY = -2500
 const FORWARD_DIR = Vector2.RIGHT
 const GRAVITY = 1000
@@ -34,11 +31,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
 	move_and_slide()
-	print(player_velocity)
-	if not is_on_floor() and velocity.y <= MAX_Y_SPEED:
+	print(velocity.y)
+	if not is_on_floor():
+		particle.emitting = true	
+		if velocity.y <= MAX_Y_SPEED:
 			velocity.y += GRAVITY * delta 
-
-
+	else:
+		particle.emitting = false	
+		
 	if Input.is_action_pressed("UP"):
 		velocity.y += VERT_VELOCITY * delta
 		velocity.y -= GRAVITY * delta
@@ -62,6 +62,8 @@ func _process(delta: float) -> void:
 	gun.scale.y = 1 if mouse_direction.x > 0 else -1
 	gun.show_behind_parent = mouse_direction.y < 0
 	gun.look_at(get_global_mouse_position())
+	animation.play("default")
+	print(velocity.y)
 
 func take_damage(delta: float) -> void:
 	if player_safe == false:
