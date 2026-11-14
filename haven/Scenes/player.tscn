@@ -67,3 +67,7 @@ layout_mode = 2
 position = Vector2(48, 44)
 scale = Vector2(0.7265625, 0.6875)
 texture = ExtResource("2_vgqql")
+
+[node name="health_timer" type="Timer" parent="." unique_id=263033467]
+
+[connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]

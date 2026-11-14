@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 var health = 3
+var player_safe = false
+var time_safe : float = 0.5 
 var hearts_list : Array [TextureRect]
 @onready
 var animations = $AnimationPlayer
@@ -24,6 +26,7 @@ func _ready() -> void:
 	for child in hearts_parents.get_children():
 		hearts_list.append(child)
 	print(hearts_list)
+	$health_timer.wait_time = time_safe
 
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
@@ -58,13 +61,20 @@ func _process(delta: float) -> void:
 	gun.look_at(get_global_mouse_position())
 
 func take_damage(delta: float) -> void:
-	if health > 0:
-		health -= 1
-		update_heart_display()
+	if player_safe == false:
+		if health > 0:
+			health -= 1
+			player_safe = true
+			update_heart_display()
+			$health_timer.start()
 		
-	if  health == 0:
-		print("DEAD")
+		if  health == 0:
+			print("DEAD")
 		
 func update_heart_display():
 	for i in range(hearts_list.size()):
 		hearts_list[i].visible = i < health
+
+
+func _on_health_timer_timeout() -> void:
+	player_safe = false
