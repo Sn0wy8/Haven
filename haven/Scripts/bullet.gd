@@ -1,7 +1,6 @@
 extends CharacterBody2D
 @onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
 @onready var GraceTimer: Timer = $GraceTimer
-@export var collision_shape = $Colliding/BreakCollide/BreakShape
 
 const IS_PLAYER = true
 var speed: float = 1200
@@ -16,6 +15,20 @@ func _ready() -> void:
 func _on_grace_timer_timeout() -> void:
 	get_node("MyHitBox/CollisionShape2D").disabled = false
 	print("rizz")
+	
+func expand_circle(amount: float) -> void:
+	var collision_shape = $Colliding/BreakCollide/BreakShape
+	var circle_shape = collision_shape.shape as CircleShape2D
+	if circle_shape:
+		circle_shape.radius += amount
+		print("gunn")
+
+func shrink_circle(amount: float) -> void:
+	var collision_shape = $Colliding/BreakCollide/BreakShape
+	var circle_shape = collision_shape.shape as CircleShape2D
+	if circle_shape:
+		circle_shape.radius -= amount
+		print("gunn")
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(direction*speed*delta)
