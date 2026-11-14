@@ -5,25 +5,34 @@
 [ext_resource type="Script" uid="uid://c53ev2josjy72" path="res://Scripts/MyHitBox.gd" id="3_ycag2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6afsh"]
-size = Vector2(122.880005, 109.71432)
+size = Vector2(40.00001, 42.000023)
 
-[node name="Bullet" type="Sprite2D" unique_id=2051783511]
-position = Vector2(-1.9073486e-06, -3.8146973e-06)
-scale = Vector2(0.19531251, 0.05468749)
-texture = ExtResource("1_v8qja")
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 20.0
+
+[node name="Bullet" type="CharacterBody2D" unique_id=807011515]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("2_t4vbm")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1364293907]
+scale = Vector2(0.3125, 0.328125)
+texture = ExtResource("1_v8qja")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=295394808]
+root_node = NodePath("../..")
 
 [node name="DistanceTimer" type="Timer" parent="." unique_id=1743016977]
 
 [node name="MyHitBox" type="Area2D" parent="." unique_id=1904937730]
+scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("3_ycag2")
 metadata/_custom_type_script = "uid://c53ev2josjy72"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MyHitBox" unique_id=900177248]
-position = Vector2(9.765623e-06, 8.283343e-05)
-scale = Vector2(0.9999998, 0.99999976)
+scale = Vector2(0.9999995, 0.99999946)
 shape = SubResource("RectangleShape2D_6afsh")
 
-[connection signal="timeout" from="DistanceTimer" to="." method="_on_distance_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630953249]
+shape = SubResource("CircleShape2D_g4v7s")
+one_way_collision = true

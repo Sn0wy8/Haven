@@ -1,12 +1,15 @@
-extends Sprite2D
+extends CharacterBody2D
 @onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
 
 const IS_PLAYER = true
-
 var speed: float = 1200
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@onready var direction = Vector2(1,0).rotated(rotation)
+
 func _physics_process(delta: float) -> void:
-	global_position += Vector2(1,0).rotated(rotation) * speed * delta
+	var collision = move_and_collide(direction*speed*delta)
+	if collision:
+		direction = direction.bounce(collision.get_normal())
+	velocity = Vector2(1,0).rotated(rotation) * speed * delta
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "remove":
