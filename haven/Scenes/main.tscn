@@ -20,5 +20,5 @@ rotation = 1.5707964
 position = Vector2(1515, -212)
 rotation = 1.5707964
 
-[node name="breakable_platform" parent="." unique_id=688448539 instance=ExtResource("3_h2yge")]
-position = Vector2(425, -80)
+[node name="breakable_platform" parent="." unique_id=1648201624 instance=ExtResource("3_h2yge")]
+position = Vector2(458, -37)
