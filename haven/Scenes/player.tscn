@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://b4locmxaumksb"]
 
-[ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://player.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_onrkg"]
-[ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://gun.tscn" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://Scripts/player.gd" id="1_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_vgqql"]
+[ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://gun.tscn" id="3_fkybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(125, 127)
 
 [node name="player" type="CharacterBody2D" unique_id=1039232777]
-script = ExtResource("1_4flbx")
+script = ExtResource("1_6t5aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=287004726]
-texture = ExtResource("2_onrkg")
+texture = ExtResource("2_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=991910359]
 position = Vector2(-0.5, 0.5)
@@ -21,4 +21,4 @@ shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="GunPivot" type="Marker2D" parent="." unique_id=452083442]
 
-[node name="Gun" parent="GunPivot" unique_id=1880026885 instance=ExtResource("3_i3pqv")]
+[node name="Gun" parent="GunPivot" unique_id=1880026885 instance=ExtResource("3_fkybt")]
