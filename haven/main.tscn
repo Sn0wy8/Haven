@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://due2n4hr7i02"]
 
+[ext_resource type="PackedScene" uid="uid://b4locmxaumksb" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ceu31quos2umr" path="res://platform.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b5ki2hegdeobu" path="res://breakable_platform.tscn" id="3_h2yge"]
+
 [node name="main" type="Node2D" unique_id=11614573]
+
+[node name="player" parent="." unique_id=1039232777 instance=ExtResource("1_ig7tw")]
+position = Vector2(475, 179)
+
+[node name="platform" parent="." unique_id=1037975149 instance=ExtResource("2_0xm2m")]
+position = Vector2(299, 440)
+
+[node name="platform2" parent="." unique_id=1782401746 instance=ExtResource("2_0xm2m")]
+position = Vector2(1086, 95)
+rotation = 1.5707964
+
+[node name="platform3" parent="." unique_id=930609550 instance=ExtResource("2_0xm2m")]
+position = Vector2(1515, -212)
+rotation = 1.5707964
+
+[node name="breakable_platform" parent="." unique_id=688448539 instance=ExtResource("3_h2yge")]
+position = Vector2(425, -80)
