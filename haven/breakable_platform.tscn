@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b5ki2hegdeobu"]
 
 [ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="1_3lhpt"]
-[ext_resource type="Script" uid="uid://b13hwkbn70rvx" path="res://MyHurtBox.gd" id="2_pqfek"]
+[ext_resource type="Script" uid="uid://bbvalqp5kbmqi" path="res://hurtbox.gd" id="3_8cl7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqfek"]
 size = Vector2(461, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8cl7r"]
-size = Vector2(463, 125)
+size = Vector2(462, 124)
 
 [node name="breakable_platform" type="AnimatableBody2D" unique_id=1037975149]
 
@@ -20,10 +20,10 @@ position = Vector2(170, 0)
 scale = Vector2(3.65625, 1)
 texture = ExtResource("1_3lhpt")
 
-[node name="MyHurtBox" type="Area2D" parent="." unique_id=1509314556]
-script = ExtResource("2_pqfek")
-metadata/_custom_type_script = "uid://b13hwkbn70rvx"
+[node name="Hurtbox" type="Area2D" parent="." unique_id=567236472 groups=["MyHitBox", "MyHitbox"]]
+position = Vector2(168.5, -1.5)
+script = ExtResource("3_8cl7r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox" unique_id=1041383861]
-position = Vector2(167.5, -3.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1249871693]
+position = Vector2(-1.5, 0.5)
 shape = SubResource("RectangleShape2D_8cl7r")

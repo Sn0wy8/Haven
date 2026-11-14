@@ -15,6 +15,10 @@ run/main_scene="uid://due2n4hr7i02"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[global_group]
+
+MyHitBox=""
+
 [input]
 
 shoot={

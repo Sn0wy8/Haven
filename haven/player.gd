@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var health = 3
 @onready
 var animations = $animations
 @onready
@@ -45,3 +46,7 @@ func _process(delta: float) -> void:
 	gun.scale.y = 1 if mouse_direction.x > 0 else -1
 	gun.show_behind_parent = mouse_direction.y < 0
 	gun.look_at(get_global_mouse_position())
+	
+func take_damage(delta: float) -> void:
+	health -= 1
+	if health 
