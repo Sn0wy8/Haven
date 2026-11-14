@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_onrkg"]
+[ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://gun.tscn" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(125, 127)
@@ -17,3 +18,7 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=809465771]
+
+[node name="GunPivot" type="Marker2D" parent="." unique_id=452083442]
+
+[node name="Gun" parent="GunPivot" unique_id=1880026885 instance=ExtResource("3_i3pqv")]

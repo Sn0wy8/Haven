@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b5ki2hegdeobu"]
+
+[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="1_3lhpt"]
+
+[node name="breakable_platform" type="AnimatableBody2D" unique_id=1037975149]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1475557375]
+position = Vector2(170, 0)
+scale = Vector2(3.65625, 1)
+texture = ExtResource("1_3lhpt")
