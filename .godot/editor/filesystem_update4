@@ -1,0 +1,13 @@
+res://player.tscn
+res://main.tscn
+res://player.gd
+res://platform.tscn
+res://gun.gd
+res://bullet.tscn
+res://gun.tscn
+res://bullet.gd
+res://hitbox.gd
+res://breakable_platform.tscn
+res://hurtbox.gd
+res://MyHitBox.gd
+res://MyHurtBox.gd

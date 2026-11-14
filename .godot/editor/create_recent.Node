@@ -1,0 +1,14 @@
+Sprite2D
+TextureRect
+HBoxContainer
+CanvasLayer
+CollisionShape2D
+MyHitBox
+Area2D
+MyHurtBox
+Timer
+AnimationPlayer
+Marker2D
+Node2D
+AnimatableBody2D
+Camera2D
