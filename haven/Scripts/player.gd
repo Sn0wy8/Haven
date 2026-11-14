@@ -31,7 +31,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
 	move_and_slide()
-	print(velocity.y)
+	#print(velocity.y)
 	if not is_on_floor() and velocity.y <= MAX_Y_SPEED:
 			velocity.y += GRAVITY * delta 
 			velocity.y -= velocity.y * delta

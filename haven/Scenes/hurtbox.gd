@@ -6,8 +6,8 @@ func _init() -> void:
 
 func _ready() -> void:
 	connect("area_entered", self._on_area_entered)
-	
-func _on_area_entered(hitbox: MyHitBox) -> void:
+
+func _on_area_entered(hitbox: BreakCollide) -> void:
 	if hitbox != null:
 		owner.queue_free()	
 	
