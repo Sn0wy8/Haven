@@ -9,29 +9,35 @@ var gun_pivot: Marker2D = $GunPivot
 @export
 var gun_hold_distance: float
 
+const MAX_SPEED = 3000
+const MAX_Y_SPEED = 900
 const SPEED = 300.0
-const RIGHT_SPEED = 10
-const JUMP_VELOCITY = -15.0
+const CONST_FORWARD = 10
+const VERT_VELOCITY = -30
 const FORWARD_DIR = Vector2.RIGHT
+const GRAVITY = 900
+const DRAG = 300
 
+func Drag_Function() -> void:
+		velocity.y = lerp(velocity.x, float(0), 0.01)
 
 func _physics_process(delta: float) -> void:
-	velocity.x = RIGHT_SPEED
+	velocity.x = CONST_FORWARD
 	move_and_slide()
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta * 0.5
- 
-	# Handle jump.
-	if Input.is_action_pressed("ui_accept"):
-		velocity.y += JUMP_VELOCITY
+	print(velocity.y)
+	if not is_on_floor() and velocity.y <= MAX_Y_SPEED:
+			velocity.y += GRAVITY * delta 
+
+	if Input.is_action_pressed("UP") and velocity.y <= MAX_Y_SPEED:
+		velocity.y += VERT_VELOCITY
+		velocity.y -= GRAVITY * delta
+
+	if Input.is_action_pressed("DOWN") and velocity.y >= MAX_Y_SPEED:
+		velocity.y -= VERT_VELOCITY
+		velocity.y -= GRAVITY * delta 
 		
-	# Downward Dash
-	if Input.is_action_pressed("ui_down"):
-		velocity.y -= -5
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+		
+	var direction := Input.get_axis("LEFT", "RIGHT")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
