@@ -243,7 +243,55 @@ position = Vector2(475, 179)
 
 [node name="platform" parent="." unique_id=1037975149 instance=ExtResource("2_0xm2m")]
 position = Vector2(-364, -447)
-scale = Vector2(4.935, 1)
+scale = Vector2(100.935, 1)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform9" parent="." unique_id=1709320716 instance=ExtResource("2_0xm2m")]
+position = Vector2(-742, -176.00003)
+rotation = 1.5707964
+scale = Vector2(100.935, 1)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform3" parent="." unique_id=28415270 instance=ExtResource("2_0xm2m")]
+position = Vector2(1584, 40)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.9)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform4" parent="." unique_id=894570117 instance=ExtResource("2_0xm2m")]
+position = Vector2(5905, -120)
+rotation = -1.5707964
+scale = Vector2(1.5, 1.9)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform5" parent="." unique_id=1389326180 instance=ExtResource("2_0xm2m")]
+position = Vector2(5905, 509)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.9)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform6" parent="." unique_id=1466741207 instance=ExtResource("2_0xm2m")]
+position = Vector2(8402, 239)
+rotation = -1.5707964
+scale = Vector2(2, 1.9)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform7" parent="." unique_id=797974922 instance=ExtResource("2_0xm2m")]
+position = Vector2(10226, 1191)
+rotation = -1.5707964
+scale = Vector2(2, 1.9)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform8" parent="." unique_id=1917411546 instance=ExtResource("2_0xm2m")]
+position = Vector2(12152.001, 137)
+scale = Vector2(2.2, 1.9)
 collision_layer = 3
 collision_mask = 3
 
