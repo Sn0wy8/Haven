@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://Scenes/gun.tscn" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://coxvsrbxqfm2j" path="res://Assets/Sprites/rising.png" id="4_8erm5"]
 [ext_resource type="Script" uid="uid://b13hwkbn70rvx" path="res://MyHurtBox.gd" id="4_vgqql"]
+[ext_resource type="Script" uid="uid://c4h5itovuljs3" path="res://Scenes/camera_2d.gd" id="6_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://d155ogfwnkeo7" path="res://PARTICLE.png" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
@@ -195,6 +196,9 @@ shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=809465771]
 zoom = Vector2(0.5, 0.5)
+limit_top = 0
+limit_bottom = 0
+script = ExtResource("6_f1ek2")
 
 [node name="GunPivot" type="Marker2D" parent="." unique_id=452083442]
 
