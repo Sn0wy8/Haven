@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xv8fvvlnha4u"]
 
 [ext_resource type="Script" uid="uid://dxbx5ty4mqyua" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://cacpjynngp0ux" path="res://Assets/Sprites/intro scream Current.png" id="2_48xlc"]
 
 [node name="main_menu" type="Control" unique_id=1179674467]
 layout_mode = 3
@@ -10,6 +11,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2040753166]
+position = Vector2(592, 314)
+texture = ExtResource("2_48xlc")
 
 [node name="Button" type="Button" parent="." unique_id=708905003]
 layout_mode = 1
