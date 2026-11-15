@@ -1,10 +1,10 @@
 extends CharacterBody2D
 @onready var AnimPlayer: AnimationPlayer = $AnimationPlayer
 @onready var GraceTimer: Timer = $GraceTimer
-
 const IS_PLAYER = true
-var speed: float = 1500
+var speed: float = 1200
 @onready var direction = Vector2(1,0).rotated(rotation)
+
 
 func _ready() -> void:
 	get_node("MyHitBox/CollisionShape2D").disabled = true
@@ -18,6 +18,7 @@ func _on_grace_timer_timeout() -> void:
 func expand_circle(amount: float) -> void:
 	var collision_shape = $Colliding/BreakCollide/BreakShape
 	var circle_shape = collision_shape.shape as CircleShape2D
+	Signals.emit_signal("ShakeCamera")
 	if circle_shape:
 		circle_shape.radius += amount
 		print("gunn")
@@ -41,4 +42,4 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_distance_timer_timeout() -> void:
-	queue_free()
+	AnimPlayer.play("remove")

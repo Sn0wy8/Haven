@@ -71,6 +71,7 @@ func take_damage(delta: float) -> void:
 	if player_safe == false:
 		if health > 0:
 			health -= 1
+			Signals.emit_signal("ShakeCamera")
 			player_safe = true
 			update_heart_display()
 			$health_timer.start()
