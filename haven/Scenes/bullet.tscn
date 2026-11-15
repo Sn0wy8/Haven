@@ -25,7 +25,7 @@ radius = 20.000011
 radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
-radius = 20.024984
+radius = 21.023796
 
 [node name="Bullet" type="CharacterBody2D" unique_id=807011515]
 collision_layer = 2
