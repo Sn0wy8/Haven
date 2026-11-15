@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bemtcfbethcfi" path="res://Scenes/death.gd" id="1_f5qp3"]
 [ext_resource type="Script" uid="uid://dk7vlsh14bygg" path="res://Scenes/button.gd" id="2_s8c8q"]
+[ext_resource type="Texture2D" uid="uid://bebkta07sbi6r" path="res://died.png" id="3_7g2bj"]
 
 [node name="DEATH" type="Control" unique_id=437816169]
 layout_mode = 3
@@ -39,6 +40,8 @@ text = "RETRY?"
 script = ExtResource("2_s8c8q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=831511074]
+position = Vector2(572, 336)
+texture = ExtResource("3_7g2bj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=288949555]
 position = Vector2(571, 327)
