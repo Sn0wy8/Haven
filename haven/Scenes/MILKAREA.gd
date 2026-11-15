@@ -15,5 +15,6 @@ func _on_area_entered(area: Area2D) -> void:
 	
 func ending_start():
 	print("ending triggered")
+	get_tree().change_scene_to_file("res://Scenes/win.tscn")
 	var ending_started = true
 	
