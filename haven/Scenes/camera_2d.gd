@@ -33,4 +33,4 @@ func shake() -> void:
 	offset.y = max_offset.y * amount * randf_range(-1, 1)
 	
 func ShakeCamera():
-	add_trauma(10000000)
+	add_trauma(0.4)
