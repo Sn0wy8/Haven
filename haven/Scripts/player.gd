@@ -42,10 +42,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("UP"):
 		velocity.y += VERT_VELOCITY * delta
 		velocity.y -= GRAVITY * delta
-		
-	if Input.is_action_pressed("DOWN"):
+		animation.play("rising")
+	elif Input.is_action_pressed("DOWN"):
 		velocity.y -= VERT_VELOCITY * delta
 		velocity.y -= GRAVITY * delta 
+		animation.play("falling")
+	else:
+		animation.play("default")
 		
 		
 	var direction := Input.get_axis("LEFT", "RIGHT")
@@ -62,7 +65,6 @@ func _process(delta: float) -> void:
 	gun.scale.y = 1 if mouse_direction.x > 0 else -1
 	gun.show_behind_parent = mouse_direction.y < 0
 	gun.look_at(get_global_mouse_position())
-	animation.play("default")
 	print(velocity.y)
 
 func take_damage(delta: float) -> void:
