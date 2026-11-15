@@ -10,6 +10,7 @@ var trauma : float = 0.0 # Current shake strength
 var trauma_power : int = 2 # Trauma exponent. Increase for more extreme shaking
 
 func _ready() -> void:
+	print("check")
 	Signals.connect("ShakeCamera",Callable(self, "ShakeCamera") )
 	randomize()
 
