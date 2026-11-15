@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://Scenes/gun.tscn" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://coxvsrbxqfm2j" path="res://Assets/Sprites/rising.png" id="4_8erm5"]
 [ext_resource type="Script" uid="uid://b13hwkbn70rvx" path="res://MyHurtBox.gd" id="4_vgqql"]
-[ext_resource type="Script" path="res://Scenes/camera_2d.gd" id="6_f1ek2"]
+[ext_resource type="Script" uid="uid://c4h5itovuljs3" path="res://Scenes/camera_2d.gd" id="6_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://d155ogfwnkeo7" path="res://PARTICLE.png" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
@@ -99,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gymyn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }, {
@@ -119,7 +119,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fd4e3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"falling",
 "speed": 10.0
 }, {
@@ -142,7 +142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpjfl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"rising",
 "speed": 5.0
 }]
@@ -190,16 +190,18 @@ scale_amount_max = 2.0
 color_ramp = SubResource("Gradient_f1ek2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=991910359]
-visible = false
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=809465771]
-offset = Vector2(0, 150)
+position = Vector2(0, 150)
+ignore_rotation = false
 zoom = Vector2(0.5, 0.5)
-limit_top = 0
-limit_bottom = 0
+limit_top = 150
+limit_bottom = 150
+position_smoothing_enabled = true
 script = ExtResource("6_f1ek2")
+max_offset = Vector2(100, 100)
 
 [node name="GunPivot" type="Marker2D" parent="." unique_id=452083442]
 
@@ -210,7 +212,6 @@ script = ExtResource("4_vgqql")
 metadata/_custom_type_script = "uid://b13hwkbn70rvx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox" unique_id=650390589]
-visible = false
 shape = SubResource("RectangleShape2D_fkybt")
 
 [node name="health_bar" type="CanvasLayer" parent="." unique_id=1029350546]
@@ -220,6 +221,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="heart" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=1023195131]
+visible = false
 custom_minimum_size = Vector2(150.305, 0)
 layout_mode = 2
 
@@ -266,5 +268,4 @@ texture = ExtResource("2_vgqql")
 
 [node name="health_timer" type="Timer" parent="." unique_id=263033467]
 
-[connection signal="shakethatshi" from="Camera2D" to="Camera2D" method="_on_shakethatshi"]
 [connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
