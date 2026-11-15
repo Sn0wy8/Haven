@@ -265,4 +265,5 @@ texture = ExtResource("2_vgqql")
 
 [node name="health_timer" type="Timer" parent="." unique_id=263033467]
 
+[connection signal="shakethatshi" from="Camera2D" to="Camera2D" method="_on_shakethatshi"]
 [connection signal="timeout" from="health_timer" to="." method="_on_health_timer_timeout"]
