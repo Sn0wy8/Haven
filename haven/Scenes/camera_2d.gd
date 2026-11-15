@@ -6,11 +6,11 @@ extends Camera2D
 @export var follow_node : Node2D # Node to follow (assign this to your player)
 
 
-
 var trauma : float = 0.0 # Current shake strength
 var trauma_power : int = 2 # Trauma exponent. Increase for more extreme shaking
 
 func _ready() -> void:
+	Signals.connect("ShakeCamera",Callable(self, "ShakeCamera") )
 	randomize()
 
 func _process(delta : float) -> void:
@@ -31,7 +31,6 @@ func shake() -> void:
 	rotation = max_roll * amount * randf_range(-1, 1)
 	offset.x = max_offset.x * amount * randf_range(-1, 1)
 	offset.y = max_offset.y * amount * randf_range(-1, 1)
-
-
-func _on_shakethatshi() -> void:
-	add_trauma(0.25)
+	
+func ShakeCamera():
+	add_trauma(0.4)

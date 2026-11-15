@@ -1,7 +1,6 @@
 extends Node2D
 
 const bullet_scene = preload("res://Scenes/bullet.tscn")
-
 const IS_PLAYER = true
 
 @export var bullet_speed: float = 600.0
