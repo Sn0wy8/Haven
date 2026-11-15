@@ -275,7 +275,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="platform3" parent="." unique_id=28415270 instance=ExtResource("2_0xm2m")]
-position = Vector2(1592, 51)
+position = Vector2(1585.0001, 63)
 rotation = -1.5707964
 scale = Vector2(1.5, 1.9)
 collision_layer = 3
@@ -332,7 +332,7 @@ scale = Vector2(4.21875, 4.0625)
 texture = ExtResource("4_344ge")
 
 [node name="damage test" parent="." unique_id=669301743 instance=ExtResource("4_jjvhh")]
-position = Vector2(146, 276)
+position = Vector2(403, 300)
 
 [node name="breakable_platform2" parent="." unique_id=1324039708 instance=ExtResource("3_h2yge")]
 position = Vector2(4030, -206)
