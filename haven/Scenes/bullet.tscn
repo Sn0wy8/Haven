@@ -41,8 +41,6 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_6afsh")
 
 [node name="DistanceTimer" type="Timer" parent="." unique_id=1743016977]
-wait_time = 10.0
-autostart = true
 
 [node name="MyHitBox" type="Area2D" parent="." unique_id=1904937730]
 scale = Vector2(0.99999994, 0.99999994)
@@ -68,5 +66,4 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
-[connection signal="timeout" from="DistanceTimer" to="." method="_on_distance_timer_timeout"]
 [connection signal="timeout" from="GraceTimer" to="." method="_on_grace_timer_timeout"]
