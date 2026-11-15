@@ -200,10 +200,10 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("CapsuleShape2D_tx1dd")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=809465771]
-offset = Vector2(0, 150)
+position = Vector2(0, 150)
 zoom = Vector2(0.5, 0.5)
-limit_top = 0
-limit_bottom = 0
+limit_top = 150
+limit_bottom = 150
 script = ExtResource("6_f1ek2")
 
 [node name="GunPivot" type="Marker2D" parent="." unique_id=452083442]
@@ -256,7 +256,7 @@ custom_minimum_size = Vector2(150.305, 0)
 layout_mode = 2
 
 [node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart4" unique_id=813835329]
-position = Vector2(-172, 41)
+position = Vector2(-172, 39)
 scale = Vector2(2.8, 2.65)
 texture = ExtResource("9_f1ek2")
 
@@ -265,7 +265,7 @@ custom_minimum_size = Vector2(150.305, 0)
 layout_mode = 2
 
 [node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart5" unique_id=1755836210]
-position = Vector2(-246.99997, 42)
+position = Vector2(-245.99997, 41)
 scale = Vector2(2.8, 2.8)
 texture = ExtResource("9_f1ek2")
 

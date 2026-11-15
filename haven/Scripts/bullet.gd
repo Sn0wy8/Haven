@@ -18,6 +18,7 @@ func _on_grace_timer_timeout() -> void:
 func expand_circle(amount: float) -> void:
 	var collision_shape = $Colliding/BreakCollide/BreakShape
 	var circle_shape = collision_shape.shape as CircleShape2D
+	Signals.emit_signal("ShakeCamera")
 	if circle_shape:
 		circle_shape.radius += amount
 		print("gunn")
