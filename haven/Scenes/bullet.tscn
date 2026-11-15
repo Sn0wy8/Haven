@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cmyg27jdy6160"]
+
+[ext_resource type="Texture2D" uid="uid://duj5ttatbb8ih" path="res://Assets/Sprites/slime ball.png" id="2_odot3"]
+[ext_resource type="Script" uid="uid://0vj47ksbt8le" path="res://Scripts/bullet.gd" id="2_t4vbm"]
+[ext_resource type="Texture2D" uid="uid://ck0gtmw50wqhi" path="res://Assets/Sprites/slime thingy normal map.png" id="3_t8o6v"]
+[ext_resource type="Script" uid="uid://c53ev2josjy72" path="res://Scripts/MyHitBox.gd" id="3_ycag2"]
+[ext_resource type="Script" uid="uid://b3w58g6t4y00r" path="res://Scenes/break_collide.gd" id="4_6afsh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qqcod"]
+diffuse_texture = ExtResource("2_odot3")
+normal_texture = ExtResource("3_t8o6v")
+
+[sub_resource type="Animation" id="Animation_ycag2"]
+resource_name = "remove"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6afsh"]
+_data = {
+&"remove": SubResource("Animation_ycag2")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8erm5"]
+radius = 20.000011
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 21.023796
+
+[node name="Bullet" type="CharacterBody2D" unique_id=807011515]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_t4vbm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1364293907]
+scale = Vector2(2.8, 2.934)
+texture = SubResource("CanvasTexture_qqcod")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=295394808]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_6afsh")
+
+[node name="DistanceTimer" type="Timer" parent="." unique_id=1743016977]
+wait_time = 10.0
+autostart = true
+
+[node name="MyHitBox" type="Area2D" parent="." unique_id=1904937730]
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("3_ycag2")
+metadata/_custom_type_script = "uid://c53ev2josjy72"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHitBox" unique_id=900177248]
+scale = Vector2(0.9999995, 0.99999946)
+shape = SubResource("CircleShape2D_8erm5")
+
+[node name="Colliding" type="CollisionShape2D" parent="." unique_id=1630953249]
+shape = SubResource("CircleShape2D_g4v7s")
+one_way_collision = true
+
+[node name="BreakCollide" type="Area2D" parent="Colliding" unique_id=2086226783]
+script = ExtResource("4_6afsh")
+
+[node name="BreakShape" type="CollisionShape2D" parent="Colliding/BreakCollide" unique_id=63777309]
+shape = SubResource("CircleShape2D_yf5fn")
+
+[node name="GraceTimer" type="Timer" parent="." unique_id=1909946771]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DistanceTimer" to="." method="_on_distance_timer_timeout"]
+[connection signal="timeout" from="GraceTimer" to="." method="_on_grace_timer_timeout"]

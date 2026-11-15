@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c1rp8layfrf3d"]
+
+[ext_resource type="Texture2D" uid="uid://d155ogfwnkeo7" path="res://PARTICLE.png" id="1_30rdv"]
+[ext_resource type="Texture2D" uid="uid://crlo5njcotf1x" path="res://Explosion_Sheet.png" id="2_3503q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_naebt"]
+load_path = "res://.godot/imported/LIGHT TEXTURE.jpg-f1044c9bb1ba4992bfead18ab7a5bb07.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7vw07"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cd2k1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yol0v"]
+diffuse_texture = SubResource("CompressedTexture2D_7vw07")
+normal_texture = SubResource("CompressedTexture2D_cd2k1")
+
+[sub_resource type="Curve" id="Curve_g4v7s"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_yf5fn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_57qmd"]
+offsets = PackedFloat32Array(0, 0.17156863, 0.3480392, 0.50980395, 0.64705884, 1)
+colors = PackedColorArray(0.5924482, 0, 0, 1, 0.9730572, 0.4504032, 1.347661e-06, 1, 0.954711, 0.954711, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_d0u6y"]
+frames = 5
+frame_0/texture = ExtResource("2_3503q")
+frame_1/duration = 1.0
+frame_2/duration = 1.0
+frame_3/duration = 1.0
+frame_4/duration = 1.0
+
+[node name="Node2D" type="Node2D" unique_id=2122860764]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1627853547]
+position = Vector2(-52.00003, -51)
+scale = Vector2(1.001953, 0.99999994)
+texture = SubResource("CompressedTexture2D_naebt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1899636487]
+position = Vector2(54, 3)
+texture = SubResource("CanvasTexture_yol0v")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=184100377]
+position = Vector2(-577, 50)
+amount = 150
+texture = ExtResource("1_30rdv")
+lifetime = 1.3
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-1, 1)
+spread = 21.55
+initial_velocity_min = 198.59
+initial_velocity_max = 283.1
+angular_velocity_curve = SubResource("Curve_g4v7s")
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_yf5fn")
+color_ramp = SubResource("Gradient_57qmd")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="." unique_id=1884042289]
+position = Vector2(-111, 85)
+amount = 10
+texture = SubResource("AnimatedTexture_d0u6y")
+anim_speed_max = 1.0
