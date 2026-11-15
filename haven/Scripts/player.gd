@@ -75,7 +75,7 @@ func take_damage(delta: float) -> void:
 			update_heart_display()
 			$health_timer.start()
 			if  health == 0:
-				print("DEAD")
+				get_tree().change_scene_to_file("res://Scenes/DEATH.tscn")
 
 		
 func update_heart_display():
