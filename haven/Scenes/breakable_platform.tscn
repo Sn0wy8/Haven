@@ -10,7 +10,7 @@ size = Vector2(93, 125)
 size = Vector2(93, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2htr"]
-size = Vector2(112, 147)
+size = Vector2(97, 134)
 
 [node name="breakable_platform" type="AnimatableBody2D" unique_id=1037975149]
 
@@ -30,5 +30,5 @@ script = ExtResource("2_h2htr")
 metadata/_custom_type_script = "uid://c53ev2josjy72"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MyHitBox" unique_id=1719776663]
-position = Vector2(1, 0.5)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_h2htr")

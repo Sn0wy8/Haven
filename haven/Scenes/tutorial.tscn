@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://b78rnfcq8poi4"]
 
+[ext_resource type="Script" uid="uid://rcjn08514uoo" path="res://Scenes/TUROIAL.gd" id="1_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://iry3fu5dqv8y" path="res://ads.png" id="1_omtrn"]
+[ext_resource type="Texture2D" uid="uid://dic823qfneq7n" path="res://fly.png" id="2_i6t4g"]
+[ext_resource type="Texture2D" uid="uid://dxevdaajsnfvl" path="res://shoot.png" id="3_p8jf4"]
+
 [node name="TUTORIAL" type="Control" unique_id=437816169]
 layout_mode = 3
 anchors_preset = 15
@@ -25,21 +30,44 @@ offset_bottom = 357.78665
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=1664138694]
 layout_mode = 2
-text = "Finished with tutorial?"
+text = "BTW theres music so turn up your volume pls"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=2082296196]
 layout_mode = 2
 text = "yup"
+script = ExtResource("1_i6t4g")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=288949555]
 position = Vector2(571, 327)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1313481744]
+position = Vector2(967, 116.00001)
+scale = Vector2(5, 5)
+texture = ExtResource("1_omtrn")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1197980494]
+position = Vector2(576.00006, 161.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("2_i6t4g")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=560326642]
+position = Vector2(203, 107.00001)
+scale = Vector2(5, 5)
+texture = ExtResource("3_p8jf4")
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1448085254]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer2" unique_id=1669196215]
+offset_left = 17.0
+offset_top = 86.33333
+offset_right = 556.0
+offset_bottom = 234.33333
+text = "Your bullets bounce!
+They can hurt you so dodge what you shoot!"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Button" method="TUROIAL_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Button" method="_on_pressed"]
