@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://ceu31quos2umr" path="res://Scenes/platform.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b5ki2hegdeobu" path="res://Scenes/breakable_platform.tscn" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://ct6u2f5olo458" path="res://Assets/pipe end down.png" id="4_344ge"]
-[ext_resource type="PackedScene" uid="uid://su2tlgsxnnsm" path="res://Scenes/damage_test.tscn" id="4_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://dfbg8olk4c3cy" path="res://Assets/Tileset/background_tileset.png" id="5_kry3j"]
 [ext_resource type="Texture2D" uid="uid://5s3vo41lsecv" path="res://Assets/Tileset/random background objects and hitbox.png" id="6_21xkr"]
 [ext_resource type="Texture2D" uid="uid://bdwdtt2xd65a" path="res://Assets/pipe end up.png" id="6_ynf5e"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bdukgixc486lm" path="res://Assets/pipe open up.png" id="8_6iyac"]
 [ext_resource type="Texture2D" uid="uid://ck8hnqgv67d63" path="res://Assets/pillar.png" id="10_d1ilt"]
 [ext_resource type="AudioStream" uid="uid://cyl0kirwvoul" path="res://Assets/Tileset/R&R final.wav" id="10_hptm8"]
+[ext_resource type="PackedScene" uid="uid://dxl0su5loavi0" path="res://Scenes/MILK.tscn" id="13_fdnlq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("5_kry3j")
@@ -358,7 +358,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="platform17" parent="." unique_id=1742875421 instance=ExtResource("2_0xm2m")]
-position = Vector2(29621.002, 534)
+position = Vector2(29606.002, 538)
 rotation = 1.5707964
 scale = Vector2(1.6, 1.9)
 collision_layer = 3
@@ -385,9 +385,6 @@ collision_mask = 3
 position = Vector2(4, 1.0000031)
 scale = Vector2(4.21875, 4.0625)
 texture = ExtResource("4_344ge")
-
-[node name="damage test" parent="." unique_id=669301743 instance=ExtResource("4_jjvhh")]
-position = Vector2(403, 300)
 
 [node name="breakable_platform2" parent="." unique_id=1324039708 instance=ExtResource("3_h2yge")]
 position = Vector2(4030, -206)
@@ -985,7 +982,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Sprite2D2" type="Sprite2D" parent="breakable_platform125" unique_id=2036275743]
-position = Vector2(4, 1.0000031)
+position = Vector2(6.2812495, -4.999997)
 scale = Vector2(4.21875, 4.0625)
 texture = ExtResource("8_6iyac")
 
@@ -1803,3 +1800,7 @@ texture = ExtResource("7_ynf5e")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1940001300]
 stream = ExtResource("10_hptm8")
 autoplay = true
+
+[node name="MILK" parent="." unique_id=1029409546 instance=ExtResource("13_fdnlq")]
+position = Vector2(30426, 202)
+rotation = -6.2831855
