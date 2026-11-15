@@ -13,9 +13,9 @@ var hearts_list : Array [TextureRect]
 
 const MAX_SPEED = 1000
 const MAX_Y_SPEED = 900
-const SPEED = 600
+const SPEED = 300
 const CONST_FORWARD = 400
-const VERT_VELOCITY = -2500
+const VERT_VELOCITY = -2000
 const FORWARD_DIR = Vector2.RIGHT
 const GRAVITY = 1000
 

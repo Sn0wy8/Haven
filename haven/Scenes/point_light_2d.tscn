@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cp4n8nni4guog"]
+
+[ext_resource type="Texture2D" uid="uid://cuc2bltp6e504" path="res://LIGHT TEXTURE.jpg" id="1_1rkh0"]
+
+[node name="PointLight2D" type="PointLight2D" unique_id=547286012]
+scale = Vector2(3, 3)
+color = Color(0.99999994, 0.19438201, 0.14410111, 1)
+texture = ExtResource("1_1rkh0")
