@@ -25,13 +25,11 @@ func _ready() -> void:
 	var hearts_parents = $health_bar/HBoxContainer
 	for child in hearts_parents.get_children():
 		hearts_list.append(child)
-	print(hearts_list)
 	$health_timer.wait_time = time_safe
 
 func _physics_process(delta: float) -> void:
 	velocity.x = CONST_FORWARD
 	move_and_slide()
-	print(velocity.y)
 	if not is_on_floor():
 		particle.emitting = true	
 		if velocity.y <= MAX_Y_SPEED:
@@ -65,7 +63,6 @@ func _process(delta: float) -> void:
 	gun.scale.y = 1 if mouse_direction.x > 0 else -1
 	gun.show_behind_parent = mouse_direction.y < 0
 	gun.look_at(get_global_mouse_position())
-	print(velocity.y)
 
 func take_damage(delta: float) -> void:
 	if player_safe == false:
