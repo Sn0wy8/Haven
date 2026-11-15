@@ -259,10 +259,20 @@ sources/1 = SubResource("TileSetAtlasSource_6iyac")
 
 [node name="main" type="Node2D" unique_id=11614573]
 
+[node name="platform21" parent="." unique_id=1037975149 instance=ExtResource("2_0xm2m")]
+position = Vector2(31258, 170)
+scale = Vector2(10, 10)
+
+[node name="platform20" parent="." unique_id=692536455 instance=ExtResource("2_0xm2m")]
+position = Vector2(-37104.34, -894)
+scale = Vector2(10187.874, 1)
+collision_layer = 3
+collision_mask = 3
+
 [node name="player" parent="." unique_id=1039232777 instance=ExtResource("1_ig7tw")]
 position = Vector2(-330, 204)
 
-[node name="platform" parent="." unique_id=1037975149 instance=ExtResource("2_0xm2m")]
+[node name="platform" parent="." unique_id=1873013194 instance=ExtResource("2_0xm2m")]
 position = Vector2(-364, -447)
 scale = Vector2(100.935, 1)
 collision_layer = 3
@@ -351,14 +361,28 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="platform16" parent="." unique_id=1789636789 instance=ExtResource("2_0xm2m")]
-position = Vector2(29617.002, -687)
+position = Vector2(29595.002, -687.00006)
 rotation = 1.5707964
 scale = Vector2(1.6, 1.9)
 collision_layer = 3
 collision_mask = 3
 
+[node name="platform18" parent="." unique_id=1410155360 instance=ExtResource("2_0xm2m")]
+position = Vector2(30546.697, 50801.8)
+rotation = -3.1415925
+scale = Vector2(3.04, 3.04)
+collision_layer = 3
+collision_mask = 3
+
+[node name="platform19" parent="." unique_id=704577409 instance=ExtResource("2_0xm2m")]
+position = Vector2(28633.1, 50376.2)
+rotation = -3.1415925
+scale = Vector2(3.04, 3.04)
+collision_layer = 3
+collision_mask = 3
+
 [node name="platform17" parent="." unique_id=1742875421 instance=ExtResource("2_0xm2m")]
-position = Vector2(29606.002, 538)
+position = Vector2(29604.002, 589)
 rotation = 1.5707964
 scale = Vector2(1.6, 1.9)
 collision_layer = 3
@@ -1802,5 +1826,5 @@ stream = ExtResource("10_hptm8")
 autoplay = true
 
 [node name="MILK" parent="." unique_id=1029409546 instance=ExtResource("13_fdnlq")]
-position = Vector2(30426, 202)
+position = Vector2(30436, 181)
 rotation = -6.2831855
