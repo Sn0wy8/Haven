@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b02i6gu8ut3mp" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://c2vx0e4xsjvis" path="res://Assets/Sprites/Spritesheet.png" id="2_fkybt"]
-[ext_resource type="Texture2D" uid="uid://uelvhslkv8pv" path="res://icon.svg" id="2_vgqql"]
 [ext_resource type="Texture2D" uid="uid://bipdag450e2y6" path="res://Assets/Sprites/FALLING ACTUAL.png" id="3_3smsa"]
 [ext_resource type="PackedScene" uid="uid://c8815eok78ono" path="res://Scenes/gun.tscn" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://coxvsrbxqfm2j" path="res://Assets/Sprites/rising.png" id="4_8erm5"]
 [ext_resource type="Script" uid="uid://b13hwkbn70rvx" path="res://MyHurtBox.gd" id="4_vgqql"]
 [ext_resource type="Script" uid="uid://c4h5itovuljs3" path="res://Scenes/camera_2d.gd" id="6_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://d155ogfwnkeo7" path="res://PARTICLE.png" id="6_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://ogy4vk7pq0n0" path="res://hearb.png" id="9_f1ek2"]
 [ext_resource type="Script" uid="uid://b3w58g6t4y00r" path="res://Scenes/break_collide.gd" id="10_tx1dd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gymyn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 10.0
 }, {
@@ -120,7 +120,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fd4e3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"falling",
 "speed": 10.0
 }, {
@@ -143,7 +143,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpjfl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"rising",
 "speed": 5.0
 }]
@@ -230,44 +230,44 @@ layout_mode = 2
 
 [node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart" unique_id=105763785]
 position = Vector2(48, 44)
-scale = Vector2(0.7265625, 0.6875)
-texture = ExtResource("2_vgqql")
+scale = Vector2(2.8, 2.65)
+texture = ExtResource("9_f1ek2")
 
 [node name="heart2" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=924898117]
 custom_minimum_size = Vector2(150.305, 0)
 layout_mode = 2
 
 [node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart2" unique_id=1493094175]
-position = Vector2(48, 44)
-scale = Vector2(0.7265625, 0.6875)
-texture = ExtResource("2_vgqql")
+position = Vector2(-24, 42)
+scale = Vector2(2.8, 2.65)
+texture = ExtResource("9_f1ek2")
 
 [node name="heart3" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=963846076]
 custom_minimum_size = Vector2(150.305, 0)
 layout_mode = 2
 
 [node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart3" unique_id=1873137758]
-position = Vector2(48, 44)
-scale = Vector2(0.7265625, 0.6875)
-texture = ExtResource("2_vgqql")
+position = Vector2(-98, 41)
+scale = Vector2(2.8, 2.65)
+texture = ExtResource("9_f1ek2")
 
 [node name="heart4" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=602490956]
 custom_minimum_size = Vector2(150.305, 0)
 layout_mode = 2
 
 [node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart4" unique_id=813835329]
-position = Vector2(48, 44)
-scale = Vector2(0.7265625, 0.6875)
-texture = ExtResource("2_vgqql")
+position = Vector2(-172, 41)
+scale = Vector2(2.8, 2.65)
+texture = ExtResource("9_f1ek2")
 
 [node name="heart5" type="TextureRect" parent="health_bar/HBoxContainer" unique_id=949393369]
 custom_minimum_size = Vector2(150.305, 0)
 layout_mode = 2
 
 [node name="heart" type="Sprite2D" parent="health_bar/HBoxContainer/heart5" unique_id=1755836210]
-position = Vector2(48, 44)
-scale = Vector2(0.7265625, 0.6875)
-texture = ExtResource("2_vgqql")
+position = Vector2(-246.99997, 42)
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("9_f1ek2")
 
 [node name="health_timer" type="Timer" parent="." unique_id=263033467]
 
