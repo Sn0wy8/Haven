@@ -1,6 +1,7 @@
 extends Area2D
 
 const bullet = preload("res://Scenes/bullet.tscn")
+var break_size = 30
 
 func _init() -> void:
 	collision_layer = 0
@@ -11,9 +12,9 @@ func _ready() -> void:
 func _on_area_entered(hitbox: BreakCollide) -> void:
 	var new_bullet = bullet.instantiate()
 	if hitbox != null:
-		new_bullet.expand_circle(100)
-		await get_tree().create_timer(0.03).timeout
-		new_bullet.shrink_circle(100)
+		new_bullet.expand_circle(break_size)
+		await get_tree().create_timer(0.05 ).timeout
+		new_bullet.shrink_circle(break_size)
 		owner.queue_free()
 		print("mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
 	
